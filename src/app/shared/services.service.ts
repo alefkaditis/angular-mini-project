@@ -23,8 +23,8 @@ export class ServicesService {
     return this.http.get<CountryDetails[]>(this.endpoint + '/capital/' + capital);
   }
 
-  getCountriesName(currency: string): Observable<string[]> {
-    return this.http.get<string[]>(this.endpoint + '/currency/' + currency + '/?fields=name');
+  getCountriesName(currency: string): Observable<Country[]> {
+    return this.http.get<Country[]>(this.endpoint + '/currency/' + currency + '/?fields=name');
   }
 
 }

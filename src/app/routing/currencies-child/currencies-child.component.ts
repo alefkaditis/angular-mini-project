@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Country } from 'src/app/shared/models';
 
 @Component({
   selector: 'app-currencies-child',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CurrenciesChildComponent implements OnInit {
 
-  @Input() countriesName: string[];
+  @Input() countriesName: Array<Country>;
   constructor() { }
 
   ngOnInit() {

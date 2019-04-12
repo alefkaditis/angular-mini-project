@@ -11,8 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CurrenciesComponent implements OnInit {
 
   public countries: Array<Country>;
-  public countriesName: Array<string>;
-  private routeParams: string;
+  public countriesName: Array<Country>;
   constructor(private service: ServicesService, private route: ActivatedRoute) {
   }
 
@@ -24,7 +23,7 @@ export class CurrenciesComponent implements OnInit {
   }
 
   fetchCountriesName(currency: string) {
-    this.service.getCountriesName(currency).subscribe((data: Array<string>) => {
+    this.service.getCountriesName(currency).subscribe((data: Array<Country>) => {
           console.log(data);
           this.countriesName = data;
         });
