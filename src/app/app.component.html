@@ -17,10 +17,13 @@
   <a class="link" [routerLink]="['/countryresolver']" routerLinkActive="active">Country Resolver</a> -->
   <ul>
     <li>
-        <a class="link" routerLink="/europe-region" routerLinkActive="active">Europe Region</a>
+        <a class="link" [routerLink]="['']" routerLinkActive="active">Home</a>
     </li>
     <li>
-        <a class="link" routerLink="/europe-region/europe-region-details" routerLinkActive="active">Europe Region child</a>
+        <a class="link" [routerLink]="['/europe-region']" [queryParams]="{fields: 'name;capital'}" routerLinkActive="active">Europe Region</a>
+    </li>
+    <li>
+        <a class="link" [routerLink]="['/currencies']" [queryParams]="{fields: 'name;capital;currencies'}" routerLinkActive="active">Currencies</a>
     </li>
   </ul>
 </nav>

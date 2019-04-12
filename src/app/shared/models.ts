@@ -1,6 +1,7 @@
 export interface Country {
   name: string;
   capital: string;
+  currencies: Currency;
 }
 
 export interface CountryDetails {

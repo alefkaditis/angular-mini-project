@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-sm-6">
+        <ul *ngFor="let country of countries">
+            <li>
+                {{country.name}} - {{country.capital}}
+                <ul *ngFor="let currency of country.currencies">
+                    <li>
+                        <a  (click)=fetchCountriesName(currency.code) style="color: #007bff;text-decoration: none;background-color: transparent;cursor: pointer">
+                          {{currency.code}}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="col-sm-6">
+        <app-currencies-child [countriesName]=getCountriesName()></app-currencies-child>
+    </div>
+</div>
+

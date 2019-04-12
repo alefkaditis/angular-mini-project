@@ -12,16 +12,16 @@ export class EuropeRegionDetailsComponent implements OnInit {
 
   private routeParams: string;
   public countryDetails: Array<CountryDetails>;
-  constructor(private service: ServicesService, private route: ActivatedRoute) {
+  constructor(private service: ServicesService, private route: ActivatedRoute) {}
+
+  ngOnInit() {
     this.route.params.subscribe(p => {
       console.log(p);
       this.routeParams = p.capital;
-    });
-  }
-
-  ngOnInit() {
-    this.service.getEuropeRegionDetails(this.routeParams).subscribe((data: Array<CountryDetails>) => {
-      this.countryDetails = data;
+      this.service.getEuropeRegionDetails(this.routeParams).subscribe((data: Array<CountryDetails>) => {
+        console.log(data);
+        this.countryDetails = data;
+      });
     });
   }
 
